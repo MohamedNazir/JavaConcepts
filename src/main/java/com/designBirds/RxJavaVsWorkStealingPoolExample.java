@@ -1,4 +1,4 @@
-package com.designBirds;
+package com.designbirds;
 
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -15,7 +15,7 @@ public class RxJavaVsWorkStealingPoolExample {
 
     public static void main(String[] args) throws InterruptedException {
 
-        List<Integer> numbers = IntStream.range(1, 9).boxed().collect(Collectors.toList());
+        List<Integer> numbers = IntStream.range(1, 1000).boxed().collect(Collectors.toList());
         System.out.println("Starting Java Concurrency Library");
         System.out.printf("Result : %s", squareJavaConcurrency(numbers));
 
@@ -92,8 +92,8 @@ public class RxJavaVsWorkStealingPoolExample {
     }
 
     private static Integer getDetailsPrintedAndReturnResult(Integer number) throws InterruptedException {
-        System.out.printf("Processing item %d on thread %s%n", number, Thread.currentThread().getName());
-        Thread.sleep(1000);
+     //   System.out.printf("Processing item %d on thread %s%n", number, Thread.currentThread().getName());
+        Thread.sleep(10);
         return number * number;
     }
 }
